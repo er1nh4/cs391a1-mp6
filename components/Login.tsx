@@ -1,4 +1,7 @@
 "use client";
+
+import GetGoogleLogin from "@/utils/GetGoogleLogin";
+
 import {GoogleLogin} from "@react-oauth/google";
 
 export default function Login() {
@@ -10,13 +13,11 @@ export default function Login() {
                     <div className="text-center space-y-2 flex flex-col items-center">
                         <h1 className="text-stone-600 text-3xl font-bold tracking-tight">OAuth Demo</h1>
                         <p className="text-stone-500 w-96 text-center">Sign into Google Below!</p>
-                        <GoogleLogin
-                            onSuccess={(credentialResponse) => {
-                                console.log(credentialResponse)
-                                // navigate("/redirect")
-                            }}
-                            onError={()=> console.log("Login fail")}
-                        />
+                        <GetGoogleLogin/>
+                        {/*<GoogleLogin*/}
+                        {/*    onSuccess={(credentials) => {*/}
+                        {/*        console.log(credentials)}}*/}
+                        {/*    onError={()=>console.log("Login fail")}/>*/}
                     </div>
                 </div>
             </main>

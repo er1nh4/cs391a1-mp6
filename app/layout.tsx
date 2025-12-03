@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import {GoogleOAuthProvider} from "@react-oauth/google";
-import Google from "@auth/core/providers/google";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,8 +25,8 @@ export default function RootLayout({
 }>) {
   return (
     <GoogleOAuthProvider clientId={process.env.GOOGLE_CLIENT_ID as string}>
-        <html lang="en">
         <title> CS391 MP-6 OAuth </title>
+        <html lang="en">
             <body
             className={`${geistSans.variable} ${geistMono.variable} antialiased`}
             >
