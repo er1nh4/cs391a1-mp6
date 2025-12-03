@@ -1,7 +1,6 @@
 export type GoogleUser = {
-    sub: string; // Google unique user ID
     name: string;
+    age: number;
     email: string;
     picture: string;
-    locale?: string;
 };
