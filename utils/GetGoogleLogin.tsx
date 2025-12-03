@@ -3,9 +3,12 @@ import React from "react";
 
 export default function GoogleLogin() {
     const handleLogin = () => {
-        window.location.href = process.env.CLIENT_CONSENT as string;
-    };
-
+        window.location.href = "https://accounts.google.com/o/oauth2/v2/auth?" +
+            "scope=https%3A//www.googleapis.com/auth/userinfo.profile&" +
+            "response_type=token&" +
+            "redirect_uri=http%3A//localhost%3A3000/redirect&" +
+            `client_id=${process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}`
+    }
     return (
         <button
             onClick={handleLogin}
