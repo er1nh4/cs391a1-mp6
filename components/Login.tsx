@@ -1,6 +1,5 @@
 "use client";
 import {GoogleLogin} from "@react-oauth/google";
-import {Navigate} from  "react-router-dom";
 
 export default function Login() {
 
@@ -13,7 +12,8 @@ export default function Login() {
                         <p className="text-stone-500 w-96 text-center">Sign into Google Below!</p>
                         <GoogleLogin
                             onSuccess={(credentialResponse) => {
-                                {console.log(credentialResponse)}
+                                console.log(credentialResponse)
+                                // navigate("/redirect")
                             }}
                             onError={()=> console.log("Login fail")}
                         />
